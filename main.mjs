@@ -17,9 +17,9 @@ for (let i = 0; i < points; i++)
 }
 
 // Save them in a file LookupTable.h with the step size
-fs.writeFileSync('out/LookupTable.h', `#pragma once\n\n` +
-    `constexpr const float step = ${step}f;\n` +
-    `constexpr const size_t size = ${points};\n\n` +
-    `constexpr const float sinTable[size] = { ${sinTable.join(', ')} };`);
+fs.writeFileSync('out/LookupTableSin.h', `#pragma once\n\n` +
+    `constexpr const float SinStep = ${step}f;\n` +
+    `constexpr const size_t SinSize = ${points};\n\n` +
+    `constexpr const float SinTable[SinSize] = { ${sinTable.join(', ')} };`);
 
 // How to generate: `npm start <points or leave it empty>` in the terminal
